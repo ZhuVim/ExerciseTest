@@ -5,6 +5,8 @@ class Cup{
 	}
 	void f(int maker){
 	System.out.println("f("+maker+")");
+	
+	
 	}
 }
 class Cups
