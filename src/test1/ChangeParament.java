@@ -7,8 +7,13 @@ public class ChangeParament {
 			System.out.println(string);
 		}
 	}
-	public static void main(String[] args) {
-		ChangeParament changeParament = new ChangeParament("ss","ww","wewe");
+//	public static void main(String[] args) {
+//		ChangeParament changeParament = new ChangeParament("ss","ww","wewe");
+//	}
+	public static void main(String...args) {
+		for (String string : args) {
+			System.out.println(string);
+		}
 	}
 }
 
