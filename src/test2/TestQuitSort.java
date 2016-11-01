@@ -13,8 +13,8 @@ public class TestQuitSort {
 		for(int b =0;b<MAX_TIME;b++)
 		{
 		Random random = new Random();
-		int arrayLength = (int)random.nextInt(40);
-//		int arrayLength = 5;
+//		int arrayLength = (int)random.nextInt(40);
+		int arrayLength = 5;
 		array = new int[arrayLength];
 		array1 = new int[arrayLength];
 		System.arraycopy(array, 0, array1, 0, array.length);
@@ -23,10 +23,10 @@ public class TestQuitSort {
 		}
 		System.arraycopy(array, 0, array1, 0, array.length);
 		Arrays.sort(array);
-//		quitsort(array1,(int)0, arrayLength-1);
-//		qs(array1, (int)0, arrayLength-1);
-		_quickSort(array1, (int)0, arrayLength-1);
-//		quicksort3( (int)0, arrayLength-1);
+//		quitsort(array1,(int)0, arrayLength-1);//OK
+		qs(array1, (int)0, arrayLength-1);//NO
+//		_quickSort(array1, (int)0, arrayLength-1);
+//		quicksort3( (int)0, arrayLength-1);//NO
 		if(Arrays.equals(array, array1))
 		System.out.println("排序成功");
 		else 
@@ -60,12 +60,12 @@ public class TestQuitSort {
 //	        if(l>=r) return; 不能放这边，因为有可能l的数值超出list的边界，抛出异常
 	        //数组的第一个作为中轴
 	        while (low < high) {
-	            while (low < high && list[high] >= tmp) {
+	            while (low < high && list[high] > tmp) {
 	                high--;
 	            }
 	            if(low<high)
 	            list[low++] = list[high];   //比中轴小的记录移到低端
-	            while (low < high && list[low] <= tmp) {
+	            while (low < high && list[low] < tmp) {
 	                low++;
 	            }
 	            if(low<high)
@@ -88,14 +88,14 @@ public class TestQuitSort {
 	pivot = items [i];
 	while (i < j)
 		{
-		while ((items [i] < pivot) && (i < right))
-			{
-			i++;
-			}
-		
-		while ((pivot < items [j]) && (j > left))
+
+		while ((pivot < items [j]) && (j > i))
 			{
 			j--;
+			}
+		while ((items [i] < pivot) && (i < j))
+			{
+			i++;
 			}
 			
 		if (i < j) 
