@@ -96,8 +96,8 @@ public class QuickSort {
 			temp = items [i];
 			items [i] = items [j];
 			items [j] = temp;
-			i++;
-			j--;
+//			i++;
+//			j--;
 			}
 		}
 	qs (items, left, j);
