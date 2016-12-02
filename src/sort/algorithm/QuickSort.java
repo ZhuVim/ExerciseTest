@@ -57,11 +57,11 @@ public class QuickSort {
 	while (i < j)
 		{
 
-		while ((pivot < items [j]) && (j > i))
+		while ((pivot <= items [j]) && (j > i))
 			{
 			j--;
 			}
-		while ((items [i] < pivot) && (i < j))
+		while ((items [i] <= pivot) && (i < j))
 			{
 			i++;
 			}
@@ -106,42 +106,21 @@ public class QuickSort {
 	    } 
 	    //最终将基准数归位 
 	    items[left]=items[i]; 
-	    items[i]=temp; 
-	                             
+	    items[i]=temp;             
 	    quicksort2(items,left,i-1);//继续处理左边的，这里是一个递归的过程 
 	    quicksort2(items,i+1,right);//继续处理右边的 ，这里是一个递归的过程 
 	} 
-//	public static void quicksort3( int[] array12, int left, int right) {
-//        if(left < right){
-//                int key = array12[left];
-//                int low = left;
-//                int high = right;
-//                while(low < high){
-//                        while(low < high && array12[high] > key){
-//                                high--;
-//                        }                       
-//                        array12[low] = array12[high];
-//                        while(low < high && array12[low] < key){
-//                                low++;
-//                        }
-//                        array12[high] = array12[low];
-//                }
-//                array12[low] = key;
-//                quicksort3(array12,left,low-1);
-//                quicksort3(array12,low+1,right);
-//        }
-//}
 	public static void quicksort3( int[]array1, int left, int right) {
         if(left < right){
                 int key = array1[left];
                 int low = left;
                 int high = right;
                 while(low < high){
-                        while(low < high && array1[high] > key){
+                        while(low < high && array1[high] >= key){
                                 high--;
                         }                       
                         array1[low] = array1[high];
-                        while(low < high && array1[low] < key){
+                        while(low < high && array1[low] <= key){
                                 low++;
                         }
                         array1[high] = array1[low];
@@ -151,5 +130,23 @@ public class QuickSort {
                 quicksort3(array1,low+1,right);
         }
 }
-	
+	public static void quicksort4( int[]array1, int left, int right) {
+		if (left>=right)
+			return;
+		int low=left;
+		int high=right;
+		int key=array1[left];
+		while (low<high) {
+			while (low<high && array1[high]>=key) {
+				high--;
+			}
+			swap(array1, low, high);
+			while (low<high && array1[low]<=key) {
+				low++;
+			}
+			swap(array1, low, high);
+		}
+		quicksort4(array1, left, low-1);
+		quicksort4(array1, low+1, right);
+	}
 }

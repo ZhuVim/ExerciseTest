@@ -24,17 +24,19 @@ public class TestSort {
 		System.arraycopy(array, 0, array1, 0, array.length);
 		Arrays.sort(array);
 //		quitsort(array1,(int)0, arrayLength-1);//OK
-//		qs(array1, (int)0, arrayLength-1);//NO
+//		QuickSort.qs(array1, (int)0, arrayLength-1);//NO
 //		QuickSort._quickSort(array1, (int)0, arrayLength-1);
 //		QuickSort.quicksort2(array1, (int)0, arrayLength-1);
-//		quicksort3( (int)0, arrayLength-1);//NO
+//		QuickSort.quicksort3( array1, (int)0, arrayLength-1);//NO
 //		MaoPao.maoSort(array1, 0, arrayLength-1);
 //		InsertSort.derctInsertSort(array1, 0,  arrayLength-1);
-		InsertSort.binaryInsertSort(array1, 0,  arrayLength-1);
+//		InsertSort.binaryInsertSort(array1, 0,  arrayLength-1);
+		QuickSort.quicksort4(array1, 0, arrayLength-1);
 		if(Arrays.equals(array, array1))
 		System.out.println("排序成功");
 		else 
 			System.out.println("没有排序成功");
 		}
 	}
+
 }
