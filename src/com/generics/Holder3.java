@@ -21,9 +21,9 @@ package com.generics;
  * @version 
  */
 public class Holder3<T, U, E> {
-    private T aT;
-    private U bU;
-    private E cE;
+    public T aT;
+    public U bU;
+    public E cE;
 
     public T getaT() {
         return aT;
@@ -57,7 +57,7 @@ public class Holder3<T, U, E> {
     }
 
     public String toString() {
-        return aT + bU + cE;
+        return "(" + aT + bU + cE + "£©";
     }
 
     public static void main(String[] args) {
