@@ -3,11 +3,11 @@ package com.arrays;
 import java.util.Arrays;
 
 public class Ex19_equal {
-    int temp;
+    int data;
 
     public Ex19_equal(int t) {
         // TODO Auto-generated constructor stub
-        temp = t;
+        data = t;
     }
 
     public static void main(String[] args) {
@@ -16,7 +16,6 @@ public class Ex19_equal {
         Arrays.fill(arr1, new Ex19_equal(1));
         Arrays.fill(arr2, new Ex19_equal(1));
         System.out.println(Arrays.equals(arr1, arr2));
-        System.out.println(Object.equal(arr1, arr2));
 
     }
 }
