@@ -13,11 +13,12 @@ public class Ex19_Extend extends Ex19_equal {
     }
 
     public static void main(String[] args) {
-        Ex19_Extend[] arr1 = new Ex19_Extend[10];
 
+        Ex19_Extend[] arr1 = new Ex19_Extend[10];
         Ex19_Extend[] arr2 = new Ex19_Extend[10];
         Arrays.fill(arr1, new Ex19_Extend(1));
         Arrays.fill(arr2, new Ex19_Extend(1));
         System.out.println(Arrays.equals(arr1, arr2));
+
     }
 }
