@@ -20,13 +20,13 @@ public class Countries {
 
     };
 
-    public static Set<String> namList(int index) throws Exception {
+    public static Set<String> namSet(int index) throws Exception {
         Set<String> names = new TreeSet<String>();
         if (index >= DATA.length) {
             throw new Exception("parament exception");
         }
         for (int i = 0; i < index; i++) {
-            names.add(DATA[index][0]);
+            names.add(DATA[i][0]);
         }
         return names;
     }

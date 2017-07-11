@@ -17,7 +17,7 @@ public class Ex2_genMapSet {
 
         TreeSet<String> set = null;
         try {
-            set = new TreeSet<String>(Countries.namList(7));
+            set = new TreeSet<String>(Countries.namSet(7));
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
