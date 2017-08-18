@@ -31,7 +31,7 @@ public class Countries {
         return names;
     }
 
-    public void namList(int index, List<String> name) throws Exception {
+    public static void namList(int index, List<String> name) throws Exception {
 
         if (index >= DATA.length) {
             throw new Exception("parament exception");
