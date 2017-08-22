@@ -1,7 +1,7 @@
 /*
  * Project: ProgramExercise
  * 
- * File Created at 2017年8月21日
+ * File Created at 2017年8月22日
  * 
  * Copyright 2016 CMCC Corporation Limited.
  * All rights reserved.
@@ -14,31 +14,15 @@
 package com.concurrency;
 
 /**
- * @Type Liftoff.java
+ * @Type DaemonSpawn.java
  * @Desc 
  * @author zhuwuming
- * @date 2017年8月21日 下午3:21:14
+ * @date 2017年8月22日 下午2:50:25
  * @version 
  */
-public class LiftOff implements Runnable {
-    protected int countDown = 10;
-    private static int taskCount = 0;
-    private final int id = taskCount++;
-
-    public LiftOff() {
-    }
-
-    public LiftOff(int countDown) {
-        this.countDown = countDown;
-    }
-
-    public String status() {
-        return "#" + id + "(" + (countDown > 0 ? countDown : "LiftOff!") + ").";
-    }
-
+public class DaemonSpawn implements Runnable {
     public void run() {
-        while (countDown-- > 0) {
-            System.out.println(status());
+        while (true) {
             Thread.yield();
         }
     }
@@ -50,5 +34,5 @@ public class LiftOff implements Runnable {
  * 
  * Date Author Note
  * -------------------------------------------------------------------------
- * 2017年8月21日 zhuwuming creat
+ * 2017年8月22日 zhuwuming creat
  */
