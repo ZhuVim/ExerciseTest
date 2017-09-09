@@ -37,6 +37,10 @@ public class ConcurrencyTest {
         ExecutorService executorService = Executors.newFixedThreadPool(2);
         Future<String> future = executorService.submit(getIns(2));
         try {
+
+            if (!future.isDone()) {
+                System.out.println("..");
+            }
             System.out.println(future.get());
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
@@ -53,7 +57,10 @@ public class ConcurrencyTest {
         @Override
         public String call() throws Exception {
             // TODO Auto-generated method stub
-            return "第" + n + "任务开始了";
+            for (int i = 0; i < 1000000; i++) {
+                n = n * 2;
+            }
+            return "第" + "任务开始了";
         }
 
     }
