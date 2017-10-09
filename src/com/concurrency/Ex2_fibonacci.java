@@ -48,7 +48,7 @@ public class Ex2_fibonacci implements Runnable {
 
     @Override
     public void run() {
-        // TODO Auto-generated method stub
+
         System.out.println(Arrays.toString(next()) + '\n');
     }
 

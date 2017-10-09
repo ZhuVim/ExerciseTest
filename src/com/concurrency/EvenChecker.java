@@ -52,6 +52,10 @@ public class EvenChecker implements Runnable {
             exec.shutdown();
         }
     }
+
+    public static void test(IntGenerator gp) {
+        test(gp, 10);
+    }
 }
 
 /**
