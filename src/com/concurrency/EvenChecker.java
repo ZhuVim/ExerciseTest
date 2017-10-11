@@ -49,8 +49,8 @@ public class EvenChecker implements Runnable {
         ExecutorService exec = Executors.newCachedThreadPool();
         for (int i = 0; i < count; i++) {
             exec.execute(new EvenChecker(gp, i));
-            exec.shutdown();
         }
+        exec.shutdown();
     }
 
     public static void test(IntGenerator gp) {

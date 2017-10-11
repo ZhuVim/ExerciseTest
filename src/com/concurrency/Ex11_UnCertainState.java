@@ -13,6 +13,9 @@
  */
 package com.concurrency;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * @Type Ex11_UnCertainState.java
  * @Desc 
@@ -21,16 +24,17 @@ package com.concurrency;
  * @version 
  */
 public class Ex11_UnCertainState implements Runnable {
-    int filed1 = 0;
-    int filed2 = 0;
+    static int filed1 = 0;
+    static int filed2 = 0;
 
-    public void changeFiled() {
-        for (int i = 0; i < 10; i++) {
-            filed1++;
-        }
-        for (int i = 0; i < 10; i++) {
-            filed2++;
-        }
+    public synchronized void changeFiled() {
+
+        System.out.println("filed1 result= " + filed1);
+        filed1++;
+
+        System.out.println("filed2 result= " + filed2);
+        filed2++;
+
     }
 
     public int readField1() {
@@ -42,13 +46,12 @@ public class Ex11_UnCertainState implements Runnable {
     }
 
     public static void main(String[] args) {
-        Ex11_UnCertainState unCertainState = new Ex11_UnCertainState();
-        Thread thread1 = new Thread(unCertainState);
-        Thread thread2 = new Thread(unCertainState);
-        thread1.run();
-        System.out.println(unCertainState.readField1());
-        thread2.run();
-        System.out.println(unCertainState.readField1());
+        ExecutorService exec = Executors.newCachedThreadPool();
+        int count = 10;
+        for (int i = 0; i < count; i++) {
+            exec.execute(new Ex11_UnCertainState());
+        }
+        exec.shutdown();
 
     }
 
