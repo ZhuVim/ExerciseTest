@@ -28,12 +28,13 @@ public class Ex11_UnCertainState implements Runnable {
     private int filed2 = 0;
 
     public synchronized void changeFiled() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(Thread.currentThread().getName() + "filed1 result= " + filed1);
+            filed1++;
 
-        System.out.println("filed1 result= " + filed1);
-        filed1++;
-
-        System.out.println("filed2 result= " + filed2);
-        filed2++;
+            System.out.println(Thread.currentThread().getName() + "filed2 result= " + filed2);
+            filed2++;
+        }
 
     }
 
