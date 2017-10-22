@@ -1,7 +1,7 @@
 /*
  * Project: ProgramExercise
  * 
- * File Created at 2017年10月9日
+ * File Created at 2017骞�10鏈�9鏃�
  * 
  * Copyright 2016 CMCC Corporation Limited.
  * All rights reserved.
@@ -20,12 +20,12 @@ import java.util.concurrent.Executors;
  * @Type Ex11_UnCertainState.java
  * @Desc 
  * @author zhuwuming
- * @date 2017年10月9日 上午11:27:14
+ * @date 2017骞�10鏈�9鏃� 涓婂崍11:27:14
  * @version 
  */
 public class Ex11_UnCertainState implements Runnable {
-    static int filed1 = 0;
-    static int filed2 = 0;
+    private int filed1 = 0;
+    private int filed2 = 0;
 
     public synchronized void changeFiled() {
 
@@ -68,5 +68,5 @@ public class Ex11_UnCertainState implements Runnable {
  * 
  * Date Author Note
  * -------------------------------------------------------------------------
- * 2017年10月9日 zhuwuming creat
+ * 2017骞�10鏈�9鏃� zhuwuming creat
  */
