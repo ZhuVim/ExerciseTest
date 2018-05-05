@@ -21,7 +21,7 @@ package design.pattern;
  * @version 
  */
 public abstract class Beverage {
-    String description = "Unknown Berverage";
+    String description = "Unknown B erverage";
 
     public String getDescription() {
         return description;
